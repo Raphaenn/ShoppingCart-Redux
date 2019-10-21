@@ -1,0 +1,44 @@
+first commit
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Mon Oct 21 16:15:07 2019 -0300
+# Committer: Raphael Neves <raphaelneves@MacBook-Air-de-Raphael.local>
+#
+# On branch master
+# Your branch is up to date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   package.json
+#	modified:   public/index.html
+#	deleted:    public/logo192.png
+#	deleted:    public/logo512.png
+#	deleted:    public/manifest.json
+#	deleted:    public/robots.txt
+#	new file:   server.json
+#	deleted:    src/App.css
+#	modified:   src/App.js
+#	deleted:    src/App.test.js
+#	new file:   src/assets/images/background.svg
+#	new file:   src/assets/images/logo.svg
+#	new file:   src/components/Header/index.js
+#	new file:   src/components/Header/styles.js
+#	deleted:    src/index.css
+#	modified:   src/index.js
+#	deleted:    src/logo.svg
+#	new file:   src/pages/Cart/index.js
+#	new file:   src/pages/Cart/styles.js
+#	new file:   src/pages/Home/index.js
+#	new file:   src/pages/Home/styles.js
+#	new file:   src/routes.js
+#	deleted:    src/serviceWorker.js
+#	new file:   src/services/api.js
+#	new file:   src/store/index.js
+#	new file:   src/store/modules/cart/reducer.js
+#	new file:   src/store/modules/rootReducer.js
+#	new file:   src/styles/global.js
+#	new file:   src/util/format.js
+#	modified:   yarn.lock
+#
+:wq
