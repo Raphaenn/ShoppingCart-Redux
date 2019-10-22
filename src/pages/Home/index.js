@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { MdAddShoppingCart } from "react-icons/md";
 import api from "../../services/api";
 import { formatPrice } from "../../util/format";
+import  * as CartActions from "../../store/modules/cart/actions";
 
 import { ProductList } from "./styles";
 
@@ -28,15 +29,14 @@ class Home extends Component {
         const { dispatch } = this.props
 
         // Dispara as actions do redux e informa exatamente a action que deve ser disparada
-        dispatch({
-            type: 'ADD_TO_CART',
-            product,
-        })
+        dispatch(CartActions.addToCart(product))
     }
 
     render () {
 
         const { products } = this.state
+        const { amount } = this.props
+
         return (
             <ProductList>
                 {products.map(product => (
@@ -49,7 +49,7 @@ class Home extends Component {
                     <span> {product.priceFomatted} </span>
                     <button type="button" onClick={ () => this.handleAddProduct(product) }>
                         <div>
-                            <MdAddShoppingCart size={16} color="#fff"/> 3
+                            <MdAddShoppingCart size={16} color="#fff"/> {amount[product.id] || 0}
                         </div>
                         <span>ADICIONAR AO CARRINHO</span>
                     </button>
@@ -61,4 +61,13 @@ class Home extends Component {
     }
 }
 
-export default connect()(Home);
+// Cria uma forma facil de acessar a infromação de quantas unidades já estão no carrinho
+const mapStateToProps = state => ({
+    amount: state.cart.reduce((amount, product) => {
+        amount[product.id] = product.amount
+
+        return amount
+    }, {}) // {} serve para o amount já inicia com um objeto vazio (reduce)
+})
+
+export default connect(mapStateToProps)(Home);
