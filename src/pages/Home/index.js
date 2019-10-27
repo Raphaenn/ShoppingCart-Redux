@@ -25,11 +25,11 @@ class Home extends Component {
         this.setState({ products: data })
     }
 
-    handleAddProduct = product => {
+    handleAddProduct = id => {
         const { dispatch } = this.props
 
         // Dispara as actions do redux e informa exatamente a action que deve ser disparada
-        dispatch(CartActions.addToCart(product))
+        dispatch(CartActions.addToCartRequest(id))
     }
 
     render () {
@@ -47,7 +47,7 @@ class Home extends Component {
                     {/* Modo burro de formatar o preço */}
                     {/* <span> {formatPrice(product.price)} </span> */}
                     <span> {product.priceFomatted} </span>
-                    <button type="button" onClick={ () => this.handleAddProduct(product) }>
+                    <button type="button" onClick={ () => this.handleAddProduct(product.id) }>
                         <div>
                             <MdAddShoppingCart size={16} color="#fff"/> {amount[product.id] || 0}
                         </div>
