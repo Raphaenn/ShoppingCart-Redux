@@ -6,16 +6,15 @@ import { formatPrice } from "../../util/format";
 import  * as CartActions from "../../store/modules/cart/actions";
 
 import { Container, ProductTable, Total } from "./styles";
-import produce from "immer";
 
 function Cart({cart, dispatch, total}) {
 
     function increment(product) {
-        dispatch(CartActions.updateAmount(product.id, product.amount + 1))
+        dispatch(CartActions.updateAmountRequest(product.id, product.amount + 1))
     }
 
     function decrement(product) {
-        dispatch(CartActions.updateAmount(product.id, product.amount - 1))
+        dispatch(CartActions.updateAmountRequest(product.id, product.amount - 1))
     }
 
     return (

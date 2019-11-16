@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+import { connect } from "react-redux"; //Conect o component com o estado do redux
 import { MdAddShoppingCart } from "react-icons/md";
 import api from "../../services/api";
 import { formatPrice } from "../../util/format";
@@ -67,7 +67,8 @@ const mapStateToProps = state => ({
         amount[product.id] = product.amount
 
         return amount
-    }, {}) // {} serve para o amount já inicia com um objeto vazio (reduce)
+    }, {}) // {} serve para o amount já iniciar com um objeto vazio (reduce)
 })
 
 export default connect(mapStateToProps)(Home);
+//connect retorna outra função
