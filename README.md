@@ -1,7 +1,7 @@
 <h1 align="center">
     <img alt="React GitHub Repo List" src="https://upload-dezcontao.s3.us-east-2.amazonaws.com/shop.png" />
     <br>
-    Nubank React Native Clone
+    RocketShoes
 </h1>
 
 <h4 align="center">
